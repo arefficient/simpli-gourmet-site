@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendQuoteConfirmation } from "@/lib/email";
+import { sendQuoteConfirmation, sendOwnerQuoteNotification } from "@/lib/email";
 
 export const runtime = "nodejs";
 
@@ -79,3 +79,18 @@ export async function POST(request: Request) {
 
   return NextResponse.json({ ok: true });
 }
+
+const ownerEmailError = await sendOwnerQuoteNotification({
+    name,
+    email,
+    phone,
+    event_type: eventType,
+    event_date: eventDate,
+    guests,
+    package: packageId,
+    message,
+  });
+
+  if (ownerEmailError) {
+    console.error("owner notification email error:", ownerEmailError);
+  }
