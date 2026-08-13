@@ -77,10 +77,7 @@ export async function POST(request: Request) {
     console.error("quote email error:", emailError);
   }
 
-  return NextResponse.json({ ok: true });
-}
-
-const ownerEmailError = await sendOwnerQuoteNotification({
+  const ownerEmailError = await sendOwnerQuoteNotification({
     name,
     email,
     phone,
@@ -94,3 +91,8 @@ const ownerEmailError = await sendOwnerQuoteNotification({
   if (ownerEmailError) {
     console.error("owner notification email error:", ownerEmailError);
   }
+
+  return NextResponse.json({ ok: true });
+
+}
+
