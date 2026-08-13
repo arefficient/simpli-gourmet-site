@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Next.js runtime plugin — required for App Router, middleware, and
+# server-side (Node) API routes like /api/quote and /api/chat on Netlify.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Serverless functions directory (unused in Phase 1 — reserved for later).
+[functions]
+  node_bundler = "esbuild"

@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --burgundy: #5a0a0a;
+  --burgundy-dark: #3a0606;
+  --gold: #d4a830;
+  --cream: #f5e6c8;
+}
+
+body {
+  @apply bg-burgundy-dark text-cream font-sans;
+}
+
+@layer components {
+  .container-lux {
+    @apply mx-auto w-full max-w-6xl px-6;
+  }
+
+  .eyebrow {
+    @apply text-gold text-xs font-bold uppercase tracking-luxury;
+  }
+
+  .h-serif {
+    @apply font-serif italic;
+  }
+
+  .gold-line {
+    @apply inline-block h-px w-16 bg-gold;
+  }
+
+  .btn-gold {
+    @apply inline-block bg-gold px-8 py-3 font-bold uppercase tracking-widest text-burgundy-dark transition-colors duration-300 hover:bg-gold-light;
+  }
+
+  .btn-ghost {
+    @apply inline-block border border-gold px-8 py-3 font-bold uppercase tracking-widest text-gold transition-colors duration-300 hover:bg-gold hover:text-burgundy-dark;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
