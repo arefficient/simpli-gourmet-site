@@ -17,6 +17,8 @@ const config: Config = {
           DEFAULT: "#D4A830",
           light: "#E8C66A",
         },
+        emerald: "#1B4332",
+        terracotta: "#C1502E",
         cream: {
           DEFAULT: "#F5E6C8",
           light: "#FBF4E4",

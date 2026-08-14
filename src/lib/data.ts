@@ -5,7 +5,8 @@ export const SITE = {
   phoneHref: "tel:+13133163882",
   email: "SimpliGourmet@aol.com",
   location: "Detroit, MI",
-  chef: "Tanaia Jones",
+  chef: "Simpli",
+  founder: "Tanaia Jones",
 };
 
 export type Package = {

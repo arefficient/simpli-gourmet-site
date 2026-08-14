@@ -18,8 +18,9 @@ export default function Footer() {
             Explore
           </h3>
           <ul className="mt-4 space-y-3 text-sm text-cream/70">
-            <li><Link href="/menu" className="hover:text-gold">Menu &amp; Packages</Link></li>
-            <li><Link href="/gallery" className="hover:text-gold">Gallery</Link></li>
+             <li><Link href="/menu" className="hover:text-gold">Menu &amp; Packages</Link></li>
+             <li><Link href="/blog" className="hover:text-gold">Journal &amp; Recipes</Link></li>
+             <li><Link href="/gallery" className="hover:text-gold">Gallery</Link></li>
             <li><Link href="/about" className="hover:text-gold">About</Link></li>
             <li><Link href="/reviews" className="hover:text-gold">Reviews</Link></li>
             <li><Link href="/contact" className="hover:text-gold">Request a Quote</Link></li>

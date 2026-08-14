@@ -1,5 +1,6 @@
 import QuoteForm from "@/components/QuoteForm";
 import { SITE } from "@/lib/data";
+import Image from "next/image";
 
 export const metadata = {
   title: "Contact | Simpli Gourmet",
@@ -8,21 +9,33 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="bg-burgundy-dark pt-20">
-      <section className="py-20 text-center">
-        <div className="container-lux">
-          <p className="eyebrow">Contact</p>
-          <h1 className="h-serif mt-4 text-5xl text-cream md:text-6xl">
+    <main className="bg-burgundy-dark pt-20 text-cream">
+      {/* Contact Hero with contact-hero.jpg */}
+      <section className="relative py-28 text-center overflow-hidden border-b border-gold/25">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/contact-hero.jpg"
+            alt="Simpli Gourmet catering setup"
+            fill
+            priority
+            className="object-cover object-center opacity-30"
+          />
+          <div className="absolute inset-0 bg-burgundy-dark/70" />
+        </div>
+        <div className="container-lux relative z-10">
+          <p className="eyebrow">Contact &amp; Inquiries</p>
+          <h1 className="h-serif mt-4 text-5xl md:text-7xl text-cream">
             Request a Quote
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-light leading-relaxed text-cream/70">
-            Tell us about your occasion and we&apos;ll respond with a menu and a
+            Tell us about your occasion and {SITE.chef} will respond with a menu and a
             quote — usually within a day.
           </p>
         </div>
       </section>
 
-      <section className="pb-24">
+      {/* Main Form Section */}
+      <section className="py-24">
         <div className="container-lux grid gap-10 lg:grid-cols-[1fr_360px]">
           <QuoteForm />
 

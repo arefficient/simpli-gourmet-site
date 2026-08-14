@@ -121,7 +121,22 @@ create policy "profiles_admin_select" on public.profiles
 create policy "page_views_admin_select" on public.page_views
   for select using (public.is_admin());
 
--- 5. Make the first user an admin (replace with your account email)
+-- 5. BLOG SUBSCRIBERS — email signups from /blog
+create table if not exists public.blog_subscribers (
+  id uuid primary key default gen_random_uuid(),
+  email text not null unique,
+  created_at timestamptz not null default now()
+);
+
+alter table public.blog_subscribers enable row level security;
+
+create policy "blog_subscribers_insert" on public.blog_subscribers
+  for insert with check (true);
+
+create policy "blog_subscribers_admin_select" on public.blog_subscribers
+  for select using (public.is_admin());
+
+-- 6. Make the first user an admin (replace with your account email)
 -- update public.profiles set role = 'admin'
 -- where email = 'your@email.com'; -- profiles has no email column;
 -- join auth.users instead:

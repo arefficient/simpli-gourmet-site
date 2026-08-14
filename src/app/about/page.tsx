@@ -4,67 +4,78 @@ import { SITE } from "@/lib/data";
 
 export default function AboutPage() {
   return (
-    <main className="bg-burgundy-dark pt-20">
-      <section className="py-20 text-center">
+    <main className="bg-burgundy-dark pt-20 text-cream">
+      {/* Hero */}
+      <section className="py-28 text-center bg-burgundy/40 border-b border-gold/25">
         <div className="container-lux">
-          <p className="eyebrow">About</p>
-          <h1 className="h-serif mt-4 text-5xl text-cream md:text-6xl">
-            Meet Chef {SITE.chef}
+          <p className="eyebrow">About the Chef</p>
+          <h1 className="h-serif mt-4 text-5xl md:text-7xl text-cream">
+            Meet {SITE.chef}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl font-light leading-relaxed text-cream/70">
-            Simpli Gourmet began with a simple belief: food brings people
-            together, and it should be done beautifully.
+            Simpli Gourmet began with a simple belief: food brings people together, and every plate should honor the occasion with warmth and elegance.
           </p>
         </div>
       </section>
 
-      <section className="pb-24">
-        <div className="container-lux grid items-center gap-12 md:grid-cols-2">
-          <div className="relative aspect-[4/5] overflow-hidden border border-gold/40 bg-burgundy">
-            <Image
-              src="/images/card.jpg"
-              alt="Simpli Gourmet business card"
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover object-center"
-            />
+      {/* Main Story Section */}
+      <section className="py-24">
+        <div className="container-lux grid items-center gap-16 lg:grid-cols-2">
+          <div className="space-y-6">
+            <div className="relative aspect-[4/5] overflow-hidden border border-gold/40 bg-burgundy shadow-2xl">
+              <Image
+                src="/images/card.jpg"
+                alt="Simpli Gourmet presentation"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="relative aspect-[16/9] overflow-hidden border border-gold/30 bg-burgundy-dark">
+              <Image
+                src="/images/card-graphic.png"
+                alt="Simpli Gourmet brand card graphic"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover object-center opacity-90"
+              />
+            </div>
           </div>
 
-          <div>
-            <p className="eyebrow">The Story</p>
-            <h2 className="h-serif mt-4 text-4xl text-cream">
+          <div className="space-y-6">
+            <p className="eyebrow">Detroit Heritage &amp; Passion</p>
+            <h2 className="h-serif text-4xl md:text-5xl text-cream leading-tight">
               Cooking That&apos;s Always Been Good Enough to Gather Around
             </h2>
-            <div className="mt-6 space-y-5 leading-relaxed text-cream/70">
+            <div className="space-y-5 leading-relaxed text-cream/80 font-light">
               <p>
-                From the Repass — a table of comfort and remembrance for family
-                and friends — to the drama of a live hibachi grill and the
-                polish of corporate catering, Chef Simpli cooks with an
-                attention to detail that clients return for time and again.
+                Founded and led by executive chef <strong className="font-bold text-gold">{SITE.founder}</strong>, Simpli Gourmet has earned its reputation across Detroit for exceptional hospitality, generous portions, and uncompromising culinary standards.
               </p>
               <p>
-                &ldquo;Exceptional customer service,&rdquo; is how one catering
-                coordinator puts it. We&apos;re not just feeding people — we&apos;re
-                taking care of them, and their guests.
+                From the Repass — a comforting table for family and friends gathering in remembrance — to the vibrant theatrical energy of live hibachi cooking and refined corporate gatherings, {SITE.chef} brings a five-star touch to every event.
+              </p>
+              <p>
+                &ldquo;Exceptional customer service and meticulous attention to detail are at the heart of everything we do,&rdquo; {SITE.chef} notes. &ldquo;We aren&apos;t just catering an event; we are taking care of your family, your colleagues, and your guests.&rdquo;
               </p>
             </div>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="pt-4 flex flex-wrap gap-4">
               <Link href="/menu" className="btn-gold">Explore the Menu</Link>
               <Link href="/contact" className="btn-ghost">Request a Quote</Link>
             </div>
           </div>
         </div>
 
-        <div className="container-lux mt-20 border-t border-gold/20 pt-16">
+        {/* Stats / Highlights */}
+        <div className="container-lux mt-32 border-t border-gold/20 pt-20">
           <div className="grid gap-10 text-center md:grid-cols-3">
             {[
-              { stat: "40+", label: "Guests served per repass" },
-              { stat: "Live", label: "Teppanyaki-style cooking" },
-              { stat: "5-Star", label: "Attention to every plate" },
+              { stat: "ServSafe", label: "Certified & Fully Insured" },
+              { stat: "Live", label: "Teppanyaki & Hibachi Tables" },
+              { stat: "5-Star", label: "Detroit Luxury Catering" },
             ].map((item) => (
-              <div key={item.label}>
-                <p className="h-serif text-5xl italic text-gold">{item.stat}</p>
-                <p className="mt-2 text-sm font-bold uppercase tracking-widest text-cream/60">
+              <div key={item.label} className="border border-gold/30 bg-burgundy-dark/60 p-8">
+                <p className="h-serif text-4xl italic text-gold">{item.stat}</p>
+                <p className="mt-3 text-xs font-bold uppercase tracking-widest text-cream/70">
                   {item.label}
                 </p>
               </div>
