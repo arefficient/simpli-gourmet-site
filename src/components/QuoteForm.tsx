@@ -54,7 +54,7 @@ function QuoteFormInner() {
     message: "",
   });
 
-  function updateField(field: string, value: any) {
+  function updateField(field: string, value: string | string[]) {
     setFormData((prev) => ({ ...prev, [field]: value }));
   }
 
