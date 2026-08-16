@@ -109,7 +109,7 @@ export default function MenuPage() {
                   {pkg.feeds}
                 </p>
                 <p className="mt-6 text-sm leading-relaxed text-cream/70">{pkg.blurb}</p>
-                <ul className="mt-8 space-y-3">
+                <ul className="mt-8 flex-1 space-y-3">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-sm text-cream/80">
                       <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
