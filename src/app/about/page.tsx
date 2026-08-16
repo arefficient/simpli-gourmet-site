@@ -22,15 +22,7 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="container-lux grid items-center gap-16 lg:grid-cols-2">
           <div className="space-y-6">
-            <div className="relative aspect-[4/5] overflow-hidden border border-gold/40 bg-burgundy shadow-2xl">
-              <Image
-                src="/images/card-graphic.png"
-                alt="Simpli Gourmet brand banner"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-center"
-              />
-            </div>
+            
             
           </div>
 

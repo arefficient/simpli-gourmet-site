@@ -15,9 +15,16 @@ export default function HomePage() {
         />
         <div className="container-lux relative py-24">
           <p className="eyebrow">Luxury Catering · Detroit, Michigan</p>
-          <h1 className="h-serif mx-auto mt-6 max-w-4xl text-5xl leading-tight text-cream md:text-7xl">
-            Exceeding Your Expectations
-          </h1>
+          <div className="mx-auto mt-6 max-w-2xl">
+            <Image
+              src="/images/card-graphic-transparent.png"
+              alt="Simpli Gourmet — Exceeding Your Expectations"
+              width={867}
+              height={398}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
           <div className="mt-8 flex justify-center">
             <span className="gold-line" />
           </div>
