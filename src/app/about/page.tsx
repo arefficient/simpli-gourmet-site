@@ -24,22 +24,14 @@ export default function AboutPage() {
           <div className="space-y-6">
             <div className="relative aspect-[4/5] overflow-hidden border border-gold/40 bg-burgundy shadow-2xl">
               <Image
-                src="/images/card.jpg"
-                alt="Simpli Gourmet presentation"
+                src="/images/card-graphic.png"
+                alt="Simpli Gourmet brand banner"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover object-center"
               />
             </div>
-            <div className="relative aspect-[16/9] overflow-hidden border border-gold/30 bg-burgundy-dark">
-              <Image
-                src="/images/card-graphic.png"
-                alt="Simpli Gourmet brand card graphic"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-center opacity-90"
-              />
-            </div>
+            
           </div>
 
           <div className="space-y-6">
