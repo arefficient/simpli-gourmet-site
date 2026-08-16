@@ -36,8 +36,17 @@ export default function AboutPage() {
 
           <div className="space-y-6">
             <p className="eyebrow">Detroit Heritage &amp; Passion</p>
+            <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden border border-gold/40 bg-burgundy shadow-2xl">
+              <Image
+                src="/images/Chef_Simpli.png"
+                alt="Chef Simpli, founder of Simpli Gourmet"
+                fill
+                sizes="(min-width: 1024px) 25vw, 50vw"
+                className="object-cover object-top"
+              />
+            </div>
             <h2 className="h-serif text-4xl md:text-5xl text-cream leading-tight">
-              Cooking That&apos;s Always Been Good Enough to Gather Around
+              The Table Everyone Remembers Long After the Plates Are Cleared
             </h2>
             <div className="space-y-5 leading-relaxed text-cream/80 font-light">
               <p>
