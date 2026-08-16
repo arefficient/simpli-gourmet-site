@@ -87,20 +87,11 @@ export default function MenuPage() {
       <section className="py-24">
         <div className="container-lux grid gap-8 md:grid-cols-3">
           {PACKAGES.map((pkg) => {
-            // Assign distinct color identities: repass = burgundy, hibachi = emerald, corporate = terracotta
-            const cardBg =
-              pkg.id === "hibachi"
-                ? "bg-emerald/30 border-emerald shadow-2xl"
-                : pkg.id === "corporate"
-                ? "bg-terracotta/30 border-terracotta shadow-2xl"
-                : "bg-burgundy-dark border-gold/35 shadow-2xl";
-
-            const badgeBg =
-              pkg.id === "hibachi"
-                ? "bg-emerald text-cream"
-                : pkg.id === "corporate"
-                ? "bg-terracotta text-cream"
-                : "bg-gold text-burgundy-dark";
+            // One consistent card style for every package — featured gets a
+            // brighter gold border instead of a different color entirely
+            const cardBg = pkg.featured
+              ? "bg-burgundy-dark border-gold shadow-2xl"
+              : "bg-burgundy-dark border-gold/35 shadow-2xl";
 
             return (
               <article
@@ -108,7 +99,7 @@ export default function MenuPage() {
                 className={`flex flex-col border p-10 ${cardBg}`}
               >
                 {pkg.featured && (
-                  <p className={`mb-4 w-max px-3 py-1 text-xs font-bold uppercase tracking-widest ${badgeBg}`}>
+                  <p className="mb-4 w-max px-3 py-1 text-xs font-bold uppercase tracking-widest bg-gold text-burgundy-dark">
                     Most Popular
                   </p>
                 )}
@@ -128,9 +119,7 @@ export default function MenuPage() {
                 </ul>
                 <Link
                   href={`/contact?package=${pkg.id}`}
-                  className={`mt-10 ${
-                    pkg.featured ? "btn-gold" : "btn-ghost"
-                  } text-center`}
+                  className="mt-10 btn-gold text-center"
                 >
                   Request This Package
                 </Link>
